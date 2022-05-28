@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="video-container">
+            <video class="left section" #video id="targetVideo" style='border: 5px solid #bbbb;' [width]="WIDTH" [height]="HEIGHT" autoplay
+                controls muted>
+            </video>
+            
+            <div #canvas></div> 
+            <div class="alert alert-primary section" role="alert" *ngIf="this.detection.length===0;">
+                NO FACES DETECTED!!
+            </div>
+            <button type="button" class="btn btn-primary right section">
+                Attendees <span class="badge badge-light">{{this.detection.length}}</span>
+            </button>
+    </div>
+</div>

@@ -1,0 +1,176 @@
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="//node_modules/materialize-css/dist/css/materialize.min.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body style="background-color:grey;">
+<div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">{{title}} <span class="sr-only">(current)</span></a>
+        </li> 
+      </ul>
+
+      
+      
+    </div>
+  </nav>
+
+  <!--Main Navigation-->
+  <header>
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse " style="background-color: #ffdde9;">
+      <div class="position-sticky">
+        <div class="list-group list-group-flush mx-3 mt-4">
+          <!-- Collapse 1 -->
+          <a class="list-group-item list-group-item-action py-2 ripple" aria-current="true"
+            data-mdb-toggle="collapse" href="#collapseExample1" aria-expanded="true"
+            aria-controls="collapseExample1">
+            <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Expanded menu</span>
+          </a>
+          <!-- Collapsed content -->
+          <ul id="collapseExample1" class="collapse show list-group list-group-flush">
+            <li class="list-group-item py-1">
+              <a href="" class="text-reset">Name</a>
+            </li>
+            <li class="list-group-item py-1">
+              <a href="" class="text-reset">{{date   | date: "mm-dd-yyyy"}}</a>
+            </li>
+            <li class="list-group-item py-1">
+              <a href="" class="text-reset">{{date   | date: "HH:mm:ss"}}</a>
+            </li>
+            <li class="list-group-item py-1">
+              <a href="" class="text-reset">Link</a>
+            </li>
+          </ul>
+          <!-- Collapse 1 -->
+
+          <!-- Collapse 2 -->
+          <a class="list-group-item list-group-item-action py-2 ripple" aria-current="true"
+            data-mdb-toggle="collapse" href="#collapseExample2" aria-expanded="true"
+            aria-controls="collapseExample2">
+            <i class="fas fa-chart-area fa-fw me-3"></i><span>Collapsed menu</span>
+          </a>
+          <!-- Collapsed content -->
+         
+          <!-- Collapse 2 -->
+        </div>
+      </div>
+    </nav>
+    <!-- Sidebar -->
+
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-custom navbar-light bg-primary fixed-top">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+          aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">
+          <img src="https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80660_960_720.png" height="35" margin-left="2" alt="Microsoft Logo"
+            loading="lazy" />
+        </a>
+        <!-- Search form -->
+        <form class="d-none d-md-flex input-group w-auto my-auto">
+          <input autocomplete="off" type="search" class="form-control rounded"
+            placeholder='Search (ctrl + "/" to focus)' style="min-width: 225px; height:40px; margin-top:0px;" />
+          <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+        </form>
+
+        <!-- Right links -->
+        <ul class="navbar-nav ms-auto d-flex flex-row">
+          <!-- Notification dropdown -->
+          
+          <!-- Icon dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#" id="navbarDropdown"
+              role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              <i class="united kingdom flag m-0"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" href="#"><i class="united kingdom flag"></i>English
+                  <i class="fa fa-check text-success ms-2"></i></a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              
+      
+            </ul>
+          </li>
+
+          <!-- Avatar -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+              id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle"
+                height="22" alt="Avatar" loading="lazy" />
+            </a>
+            
+          </li>
+         
+        </ul>
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    
+    <!-- Navbar -->
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main style="margin-top: 0px;">
+    <mat-tab-group mat-tabs >
+      <mat-tab label="Login"></mat-tab>
+      <mat-tab label="Face Recognition">
+       
+          <!-- <div class="nav-wrapper"> -->
+            <!-- <a href="#" class="brand-logo center">Facial Recognition</a> -->
+           
+            
+          <!-- </div> -->
+        
+        <div class="container">
+          <app-webcam toinform='ToInform($event)'>
+            <!-- <button >
+              Attendees <span>{{this.detect.length}}</span></button> -->
+          </app-webcam>
+          
+          
+        </div>
+        <div  class="row" >
+          <button onclick="window.location.href='#'">
+          Train </button>
+          <div class="space"></div>
+          <button onclick="window.location.href='test.html'">
+           Test </button>
+
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+    
+
+  </main>
+  <!--Main layout-->
+  
+  
+ 
+</div> 
+</body>

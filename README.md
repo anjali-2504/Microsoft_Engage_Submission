@@ -1,12 +1,12 @@
 # Microsoft_Engage_Submission
 
-##Pre-requisites
+# Pre-requisites
 
 *The project uses angular, angular-cli, html and css for deploying this web application.*
 
 *You must have node.js installed on your laptop/desktop.*
 
-##Steps
+# Steps
 
 *First clone the repository*
 
